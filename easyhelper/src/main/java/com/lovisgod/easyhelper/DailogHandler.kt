@@ -12,10 +12,10 @@ import com.google.android.material.snackbar.Snackbar
 
 class DailogHandler {
 
-    fun makeSnack(view: View, message:String, context: Context) {
+    fun makeSnack(view: View, message:String, context: Context, color: Int) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             Snackbar.make(view, message, Snackbar.LENGTH_LONG)
-                .setBackgroundTint(context.getColor(R.color.colorAccent))
+                .setBackgroundTint(context.getColor(color))
                 .show()
         } else {
             Snackbar.make(view, message, Snackbar.LENGTH_LONG)
