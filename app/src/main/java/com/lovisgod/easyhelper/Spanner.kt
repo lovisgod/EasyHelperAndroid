@@ -27,7 +27,6 @@ class Spanner {
 
         val clickableSpan =  object : ClickableSpan() {
             override fun onClick(p0: View) {
-                println("getting here")
                 if (method != null) {
                     method()
                 }
