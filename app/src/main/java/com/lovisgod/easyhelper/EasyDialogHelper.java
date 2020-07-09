@@ -34,10 +34,7 @@ public class EasyDialogHelper {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View mView = inflater.inflate(layout, null);
         builder.setView(mView);
-        System.out.println("getting here");
-        System.out.println(listener);
                 if (listener != null) {
-                    System.out.println("getting here here");
                     listener.onObjectReady(mView); // <---- fire listener here
                 }
         return  builder.create();

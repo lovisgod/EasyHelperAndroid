@@ -2,10 +2,11 @@ package com.lovisgod.easyhelper
 
 import android.content.Context
 import android.os.Build
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.FrameLayout
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.snackbar.Snackbar
 
@@ -22,6 +23,23 @@ class DailogHandler {
                 .show()
         }
     }
+
+    fun makeTopSnack(view: View, message:String, color: Int) {
+        val snackbar = Snackbar.make(view, message, Snackbar.LENGTH_LONG)
+        val view1 = snackbar.view
+        val params =
+            view1.layoutParams as FrameLayout.LayoutParams
+        params.gravity = Gravity.TOP
+        view1.layoutParams = params
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            snackbar.setBackgroundTint(color)
+            snackbar.show()
+        } else {
+            snackbar.show()
+        }
+
+    }
+
 
     fun makeToast(message: String, context: Context, background: Int? = null) {
         val toast = Toast.makeText(context, message, Toast.LENGTH_LONG)

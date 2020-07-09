@@ -23,8 +23,9 @@ class MainActivity : AppCompatActivity() {
         val easyEH = TextHandler()
         val easyD = DailogHandler()
         val easyDHelper = EasyDialogHelper()
-        easySpanner.makeClickableSpan({ easyD.makeSnack(txt, "This is the sample",
-            this) }, Color.WHITE, true, txt, 0, 6, "Lovisgod")
+        easySpanner.makeClickableSpan({ easyD.makeTopSnack(txt, "this is top snack",
+            this.resources.getColor(R.color.colorAccent)) },
+            Color.WHITE, true, txt, 0, 6, "Lovisgod")
 
         btn.setOnClickListener {
             if ( samEdit.text.toString().isEmpty()) {
@@ -43,7 +44,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun handleAction (view: View) {
-        println("getting here")
         val saveBtn = view.findViewById<Button>(R.id.button_)
         saveBtn.setOnClickListener {
             println("this is working")
